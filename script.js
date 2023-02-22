@@ -1,14 +1,15 @@
 //your code here
-let n = Math.floor(Math.random() * 5 + 1);
+
 let main = document.getElementsByTagName('main')[0];
-let images = document.querySelectorAll('img');
+let n = Math.floor(Math.random() * 5 + 1);
 var randomImage = document.getElementsByClassName('none')[0];
+let images = document.querySelectorAll('img');
 let imageContainer = document.getElementsByClassName("image")[0];
 let arr = [];
 let reset = document.getElementById('reset');
 reset.style.display = 'none';
-let verify = document.getElementById('verify');
 let result = document.getElementsByClassName('para')[0];
+let verify = document.getElementById('verify');
 verify.style.display = 'none';
 randomImage.setAttribute("class", `img${n}`);
 images.forEach((e)=>{
@@ -25,7 +26,7 @@ images.forEach((e)=>{
       reset.style.display = 'none';
       verify.style.display = 'none';
       let para = document.createElement('p');
-      para.innerText = "Please select only 2 images. Kindly refresh the page";
+      para.innerText = "Please select only 2 images.refresh the page";
       main.append(para);
     }
   })
@@ -45,7 +46,7 @@ reset.addEventListener('click',()=>{
 
 verify.addEventListener('click',()=>{
   if(arr[0]==arr[1]){
-     result.innerText = 'You are a human. Congratulations!.';
+     result.innerText = 'You are a human.';
   }else{
     result.innerText = "We can't verify you as a human. You selected the non-identical tiles.";
   }
